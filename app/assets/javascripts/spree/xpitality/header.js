@@ -8,6 +8,10 @@ const handleHeader = () => {
   const dropdown = document.querySelectorAll(".nav-dropdown");
   const searchWrapper = document.querySelector(".header-content");
   const navHolder = document.querySelectorAll(".nav-link");
+  const CheckoutPage = document.querySelector('.checkout');
+  const CheckoutPageLogin = document.querySelector('.login');
+  const navbar = document.querySelector(".navbar");
+  const catalogHolder = document.querySelector('.catalog-holder');
 
   hamburger.addEventListener("click", () => {
     if (navBar.classList.contains("show")) {
@@ -77,13 +81,28 @@ const handleHeader = () => {
   //hide search on scroll
   const isMobile = /iPhone|Android/i.test(navigator.userAgent);
   if (isMobile) {
+    if (CheckoutPage || CheckoutPageLogin) {
+      searchHolder.style.display = 'none';
+      searchWrapper.style.height = "88px";
+    }
     window.onscroll = function () {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 100) {
         searchHolder.style.display = 'none';
         searchWrapper.style.height = "88px";
-      } else {
-        searchHolder.style.display = 'flex';
-        searchWrapper.style.height = "163px";
+        if(catalogHolder){
+            navbar.style.height = "100%";
+            navbar.style.top = "64px";
+        }
+      } else if (window.scrollY == 0){
+        if (CheckoutPage || CheckoutPageLogin) {
+          searchHolder.style.display = 'none';
+          searchWrapper.style.height = "88px";
+        } else if (catalogHolder){
+          navbar.style.top = "121px";
+        } else {
+          searchHolder.style.display = 'flex';
+          searchWrapper.style.height = "163px";
+        }
       }
     };
   }
