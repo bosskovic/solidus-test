@@ -26,14 +26,12 @@ const handleHeader = () => {
 
   // Handling nav links
   navLinks.forEach((link) => {
-    // var wid = $(window).width();
-    // if (wid > 1024) {
     link.addEventListener("mouseover", (event) => {
-      var wid = $(window).width();
+      const windowWidth = $(window).width();
       const allDrops = [...document.querySelectorAll(".nav-dropdown")];
       const drop = event.target.parentElement.querySelector(".nav-dropdown");
 
-      if (drop && wid > 1024) {
+      if (drop && windowWidth > 1024) {
         if (drop.classList.contains("show")) {
           drop.classList.remove("show");
         } else {
@@ -46,8 +44,8 @@ const handleHeader = () => {
     });
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      var width = $(window).width();
-      if (width > 1024) {
+      const windowWidth = $(window).width();
+      if (windowWidth > 1024) {
         return false;
       } else {
         const allDrops = [...document.querySelectorAll(".nav-dropdown")];
@@ -65,24 +63,6 @@ const handleHeader = () => {
         }
       }
     });
-    // } else {
-    //   // $(".nav-link-with-drop").off("mouseover").off("mouseout");
-    //   link.addEventListener("click", (event) => {
-    //     const allDrops = [...document.querySelectorAll(".nav-dropdown")];
-    //     const drop = event.target.parentElement.querySelector(".nav-dropdown");
-
-    //     if (drop) {
-    //       if (drop.classList.contains("show")) {
-    //         drop.classList.remove("show");
-    //       } else {
-    //         allDrops.forEach((el) => {
-    //           el.classList.remove("show");
-    //         });
-    //         drop.classList.add("show");
-    //       }
-    //     }
-    //   });
-    // }
   });
 
   //hide the drop
@@ -93,7 +73,6 @@ const handleHeader = () => {
   });
   navHolder.forEach((link) => {
     link.addEventListener("mouseleave", () => {
-      // link.classList.remove("show");
       if (!link.classList.contains("nav-link-with-drop")) {
         const allDrops = [...document.querySelectorAll(".nav-dropdown")];
         allDrops.forEach((el) => {
