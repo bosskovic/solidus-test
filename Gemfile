@@ -95,6 +95,8 @@ gem 'daemons'
 
 gem 'rack-rewrite'
 
+gem 'dalli'
+
 group :staging, :production do
   gem 'fog-aws'
 end
