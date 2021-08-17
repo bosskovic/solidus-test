@@ -1,4 +1,4 @@
-<div class="swiper-section container">
+<div class="swiper-section container product-row-slider">
   <p class="swiper-title">
     <%= t('store.swiper.title') %>
   </p>
@@ -7,13 +7,11 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="product-side zoom-effect">
         <% Spree::Product.products_for_taxon(taxon: producer).each do |product| %>
-          <div class="swiper-slide">
+          <div class="swiper-slide product-side zoom-effect">
             <%= render partial: 'spree/shared/product_card', locals: { product: product } %>
           </div>
-        <% end %>
-      </div>
+        <% end %>      
     </div>
     <div class="swiper-navigation">
       <!-- If we need navigation buttons -->

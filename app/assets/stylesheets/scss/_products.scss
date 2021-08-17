@@ -10,12 +10,22 @@ $colPadding: 10px;
   margin-right: -$colPadding;
   border-bottom: 1px solid #e5e5e5;
 }
-.products-button-holder{
+.zoom-effect {
+  display: flex;
+  // padding: 30px 0;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  // margin-left: -$colPadding;
+  // margin-right: -$colPadding;
+  // border-bottom: 1px solid #e5e5e5;
+}
+.products-button-holder {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 54px 0 88px 0;
-  .btn{
+  .btn {
     font-family: "chainprinter", sans-serif;
   }
 }
@@ -55,28 +65,28 @@ $colPadding: 10px;
     .new-mark-bottom {
       display: none;
     }
-    .product-side{
+    .product-side {
       height: 100%;
     }
   }
-  .zoom-effect {
+  .picture-holder {
     overflow: hidden;
-    a{
+    a {
       display: flex;
       height: 100%;
     }
   }
-  .zoom-effect img {
-    transition: transform .5s ease;
+  .picture-holder img {
+    transition: transform 0.5s ease;
   }
-  .zoom-effect:hover img {
+  .picture-holder:hover img {
     transform: scale(1.2);
   }
-  .disabled-cart{
+  .disabled-cart {
     position: relative;
-    .disabled-cart-text{
+    .disabled-cart-text {
       padding: 10px;
-      right:0;
+      right: 0;
       background-color: #fff;
       display: none;
       position: absolute;
@@ -84,9 +94,9 @@ $colPadding: 10px;
       border: 1px solid #e5e5e5;
     }
   }
-  .disabled-cart:hover{
-    .disabled-cart-text{
-      display: block
+  .disabled-cart:hover {
+    .disabled-cart-text {
+      display: block;
     }
   }
   .product-card-body {
@@ -107,7 +117,7 @@ $colPadding: 10px;
         font-size: 16px;
         font-weight: bold;
       }
-      .title{
+      .title {
         font-family: "chainprinter", sans-serif;
         font-size: 12px;
         margin-bottom: 8px;
@@ -163,7 +173,7 @@ $colPadding: 10px;
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        p{
+        p {
           text-align: center;
           color: #fff;
           font-size: 12px;
@@ -181,7 +191,7 @@ $colPadding: 10px;
         transform: translateX(-50%);
         width: 85px;
         height: 38px;
-        font-family: 'chainprinter', sans-serif;
+        font-family: "chainprinter", sans-serif;
         p {
           font-size: 12px;
           font-weight: bold;
@@ -189,7 +199,7 @@ $colPadding: 10px;
           color: $white;
         }
       }
-    } 
+    }
   }
   &.product-side {
     flex-direction: row;
@@ -225,9 +235,95 @@ $colPadding: 10px;
   }
 }
 
-.featured-producer-section .new-mark-top, .featured-collection-products-section .new-mark-top, .all-available-products .new-mark-top{
+.featured-producer-section .new-mark-top,
+.featured-collection-products-section .new-mark-top,
+.all-available-products .new-mark-top {
   display: none;
 }
-.featured-producer-section .new-mark-bottom, .featured-collection-products-section .new-mark-bottom, .all-available-products .new-mark-bottom{
+.featured-producer-section .new-mark-bottom,
+.featured-collection-products-section .new-mark-bottom,
+.all-available-products .new-mark-bottom {
   display: none;
+}
+.product-row-slider {
+  .zoom-effect {
+    flex-wrap: inherit;
+    justify-content: space-between;
+    .swiper-slide {
+      width: 32.33%;
+    }
+  }
+  .product-card {
+    flex-direction: row;
+    .product-card-body {
+      display: flex;
+      flex: 0 0 60%;
+      flex-direction: column;
+      .body-info {
+        border-bottom: none;
+        text-align: left;
+        padding: 0 0 16px 0;
+      }
+    }
+  }
+}
+.new-product {
+  .product-card {
+    flex-direction: row;
+    .product-card-body {
+      height: 100%;
+      flex: 0 0 60%;
+      flex-direction: column;
+      .body-info {
+        border-bottom: none;
+        text-align: left;
+        padding: 0 0 16px 0;
+      }
+      .body-actions-holder {
+        margin-top: auto;
+        border-top: 1px solid #e5e5e5;
+      }
+    }
+    .product-image-holder {
+      flex: 0 0 40%;
+      .picture-holder {
+        height: 100;
+        img {
+          max-height: 232px;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.featured-collection-products-section {
+  .product-card {
+    flex-direction: row;
+    .product-card-body {
+      height: 100%;
+      flex: 0 0 60%;
+      flex-direction: column;
+      .body-info {
+        border-bottom: none;
+        text-align: left;
+        padding: 0 0 16px 0;
+      }
+      .body-actions-holder {
+        margin-top: auto;
+        border-top: 1px solid #e5e5e5;
+      }
+    }
+    .product-image-holder {
+      flex: 0 0 40%;
+      .picture-holder {
+        height: 100;
+        img {
+          max-height: 232px;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+    }
+  }
 }
