@@ -1,21 +1,19 @@
 <div class="home-content">
-  <% cache 'test' do %>
-    <div class="home-hero">
-      <picture class="home-hero-image exceptSmallScreen">
-        <source srcset="<%= asset_path("home/homepage_image.webp")%>" type='image/webp'>
-        <%= image_tag("home/homepage_image.jpg", itemprop: :image) %>
-      </picture>
-      <picture class="home-hero-image smallScreen">
-        <source srcset="<%= asset_path("home/homepage_image_mobile.webp")%>" type='image/webp'>
-        <%= image_tag("home/homepage_image_mobile.jpg", itemprop: :image) %>
-      </picture>
+  <div class="home-hero">
+    <picture class="home-hero-image exceptSmallScreen">
+      <source srcset="<%= asset_path("home/homepage_image.webp")%>" type='image/webp'>
+      <%= image_tag("home/homepage_image.jpg", itemprop: :image) %>
+    </picture>
+    <picture class="home-hero-image smallScreen">
+      <source srcset="<%= asset_path("home/homepage_image_mobile.webp")%>" type='image/webp'>
+      <%= image_tag("home/homepage_image_mobile.jpg", itemprop: :image) %>
+    </picture>
 
-      <div class="home-title-holder">
-        <p class="home-subtitle"><%= t('store.home.hero.subtitle')%></p>
-        <h1 class="home-title"><%== t('store.home.hero.title')%></h1>
-      </div>
+    <div class="home-title-holder">
+      <p class="home-subtitle"><%= t('store.home.hero.subtitle')%></p>
+      <h1 class="home-title"><%== t('store.home.hero.title')%></h1>
     </div>
-  <% end %>
+  </div>
 
   <div data-hook="homepage_products" class="all-available-products">
     <%# cache(cache_key_for_products) do %>

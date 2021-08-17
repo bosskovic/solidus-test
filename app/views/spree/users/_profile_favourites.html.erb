@@ -5,10 +5,12 @@
     </p>
   </div>
   <div class="products-holder">
-    <% try_spree_current_user.product_likes.each do |product_like| %>
-      <div class="product-col">
-        <%= render partial: 'spree/shared/product_card', locals: { product: product_like.product, css_classes: 'zoom-effect' } %>
-      </div>
-    <% end %>
+    <div class="zoom-effect">
+      <% try_spree_current_user.product_likes.each do |product_like| %>
+        <div class="product-col">
+          <%= render partial: 'spree/shared/product_card', locals: { product: product_like.product } %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

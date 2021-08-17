@@ -60,6 +60,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :mem_cache_store, "enoteca-naturale-memcached.lfs5kr.cfg.euc1.cache.amazonaws.com:11211"
+  # config.cache_store = :mem_cache_store, "enoteca-naturale-memcached.lfs5kr.cfg.euc1.cache.amazonaws.com:11211", { pool_size: 5, pool_timeout: 5 }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
