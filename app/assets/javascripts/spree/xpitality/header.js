@@ -17,12 +17,12 @@ const handleHeader = () => {
   hamburger.addEventListener("click", () => {
     if (navBar.classList.contains("show")) {
       navBar.classList.remove("show");
-      searchHolder.style.display = "flex";
+      // searchHolder.style.display = "flex";
       // searchWrapper.style.height = "163px";
       body.style.overflow = "auto";
     } else {
       navBar.classList.add("show");
-      searchHolder.style.display = "none";
+      // searchHolder.style.display = "none";
       body.style.overflow = "hidden";
     }
   });
